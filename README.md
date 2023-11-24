@@ -2,15 +2,21 @@
 Soulstyler: Using Large Language Model to Guide Image Style Transfer for Target Object
 
 [![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Soulstyler?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Soulstyler)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=VF0TFt_FMKHP&uniqifier=1)
 [![arXiv](https://img.shields.io/badge/arXiv-2311.13562-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2311.13562)
 ---
 
-We provide a demo on colab that can be easily run! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98)
+We provide a demo on colab that can be easily run! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=VF0TFt_FMKHP&uniqifier=1)
 
-    ⚠: demo in colab needs to download the model from the internet and may run slowly due to GPU limitations (30s-60s an iter, usually need to train about 200 iters to get better results)
+```
+⚠: demo in colab needs to download the model from the internet and may run slowly due to GPU limitations (30s-60s an iter, usually need to train about 200 iters to get better results)
+```
 
 For more technical details check out the latest version of the paper on arxiv: [![arXiv](https://img.shields.io/badge/arXiv-2311.13562-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2311.13562)
+
+The top left is the original image, and the bottom left is the mask generated using the stylized objects via CRIS. The rest are stylized images generated with different stylized content. Our stylized translation results in various text conditions. The stylized images have the spatial structure of the content images with realistic textures corresponding to the text, while retaining the original style of the non-target regions.
+
+![soulstyler examples](./img/examples.jpg)
 
 ❤A more detailed description of the source code is in the process of being organized and will be posted in a readme in this repository when the paper is accepted.
 
@@ -25,21 +31,12 @@ The overall architecture of the system.
 
 
 ## Experiments
-The top left is the original image, and the bottom left is the mask generated using the stylized objects via CRIS. The rest are stylized images generated with different stylized content. Our stylized translation results in various text conditions. The stylized images have the spatial structure of the content images with realistic textures corresponding to the text, while retaining the original style of the non-target regions.
-
-![soulstyler examples](./img/examples.jpg)
-
-
-<!-- ![](./img/soulboat.png)
-
-
-![](./img/soulplanes.png) -->
-
 ### Selection of Large Language Models
 We manually set up 100 Stylized Instruction and corresponding standard answers Stylized Content and Stylized Objects to check the correctness of different LLMs in performing Stylized Instruction comprehension and segmentation.
 
 ### Comparison with existing text-guided style transfer models
-replacereplacereplacereplacereplacereplace
+![soulstyler Comparison](./img/comp.jpg)
+
 
 ### Stylized Threshold Experiments: $t \lambda_m L_{\text{mask}}$
 replacereplacereplacereplacereplacereplacereplacereplacereplace
@@ -57,7 +54,7 @@ $ pip install git+https://github.com/openai/CLIP.git
 ```
 
 ### 1. Single Image Style Transfer
-Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98)
+Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=VF0TFt_FMKHP&uniqifier=1)
 
 
 ### 2. Multiple Image Style Transfer
