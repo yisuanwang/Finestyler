@@ -39,10 +39,10 @@ The top left is the original image, and the bottom left is the mask generated us
 We manually set up 100 Stylized Instruction and corresponding standard answers Stylized Content and Stylized Objects to check the correctness of different LLMs in performing Stylized Instruction comprehension and segmentation.
 
 ### Comparison with existing text-guided style transfer models
-嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻
+replacereplacereplacereplacereplacereplace
 
 ### Stylized Threshold Experiments: $t \lambda_m L_{\text{mask}}$
-嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻
+replacereplacereplacereplacereplacereplacereplacereplacereplace
 
 
 ## How to Run
