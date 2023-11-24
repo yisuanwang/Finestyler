@@ -1,0 +1,70 @@
+DATA:
+  dataset: refcoco+
+  train_lmdb: dataset/lmdb/refcoco+/train.lmdb
+  train_split: train
+  val_lmdb: dataset/lmdb/refcoco+/testB.lmdb
+  val_split: testB
+  mask_root: dataset/masks/refcoco+
+TRAIN:
+  # Base Arch
+  clip_pretrain: pretrain/RN50.pt
+  input_size: 416
+  word_len: 17
+  word_dim: 1024
+  vis_dim: 512
+  fpn_in: [512, 1024, 1024]
+  fpn_out: [256, 512, 1024]
+  sync_bn: True
+  # Decoder
+  num_layers: 3
+  num_head: 8
+  dim_ffn: 2048
+  dropout: 0.1
+  intermediate: False
+  # Training Setting
+  workers: 1  # data loader workers
+  workers_val: 1
+  epochs: 50
+  milestones: [35]
+  start_epoch: 0
+  batch_size: 16  # batch size for training
+  batch_size_val: 64  # batch size for validation during training, memory and speed tradeoff
+  base_lr: 0.0001
+  lr_decay: 0.1
+  lr_multi: 0.1
+  weight_decay: 0.
+  max_norm: 0.
+  manual_seed: 0
+  print_freq: 100
+  # Resume & Save
+  exp_name: CRIS_R50
+  output_folder: exp/refcoco+
+  save_freq: 1
+  weight:  # path to initial weight (default: none)
+  resume:  # path to latest checkpoint (default: none)
+  evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+Distributed:
+  dist_url: tcp://localhost:3681
+  dist_backend: 'gloo' #dist_backend: 'nccl'
+  multiprocessing_distributed: True
+  world_size: 1
+  rank: 0
+TEST:
+  test_split: val-test
+  test_lmdb: datasets/lmdb/refcoco+/val.lmdb
+  visualize: False
+STYLENET:
+  lambda_tv: 0.002 #total variation loss parameter
+  lambda_patch: 9000 #PatchCLIP loss parameter
+  lambda_dir: 500 #directional loss parameter
+  lambda_c: 150 #content loss parameter
+  crop_size: 128 #cropped image size
+  num_crops: 64 #number of patches
+  max_step: 200 #Number of domains
+  lr: 0.0005 #Number of domains
+  thresh: 0.7 #Number of domains
+
+  pot_part : 0.95 #potrail部分占比
+  back_thres : 0.7 # thres rejection of potrait
+  people_thres : 0.7 # thres rejection of back
+  peo_num : 0.5 # portion of patch in potrait
