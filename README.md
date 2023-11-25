@@ -54,9 +54,7 @@ Comparison with existing state-of-the-art text-guided image style transfer model
 
 ![Soulstyler Threshold Experiments](./img/expt.jpg)
 
-We find that the threshold t = 0.7 is able to exactly balance the stylization of the unsegmented part of the target object and the original image features of the non-target object region.
-
-
+We found that the threshold value t = 0.7 can just balance the stylization of the unsegmented part of the target object and the original image features of the non-target object region. A threshold t that is too small will result in non-targeted areas of the image being stylized, and too large will result in loss of stylization (loss of color or texture) in the targeted areas.
 
 ## How to Run
 
@@ -103,6 +101,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+
 ```
 
 # License
