@@ -61,7 +61,7 @@ We find that the threshold t = 0.7 is able to exactly balance the stylization of
 ## How to Run
 
 ### Environment
-Python 3.10.13 + 1.12.0+cu116, ubuntu 20.04.1
+Python 3.10.13 & ptyorch 1.12.0+cu116 & ubuntu 20.04.1
 ```
 $ conda create -n soulstyler python=3.10
 $ conda activate soulstyler
