@@ -74,7 +74,7 @@ Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab
 ### 2. Multiple Image Style Transfer
 If you think it's long for him to generate a graph (due to the presence of random cropping, this takes a long time to reduce the loss, we'll follow up with optimizations 😳), you can run demo.py, which is a multi-threaded batch-run script that allows for multiple Stylized Content trainings to be performed simultaneously on a single GPU.
 
-Some commands for testing can be found in democases.md (this is just a temporary draft file of commands, a more detailed description of the training, inference detail steps will follow in this github repository)
+Some commands for testing can be found in democases.md (this is just a temporary draft file of commands, a more detailed description of the training, inference detail steps will follow in this GitHub repository)
 
 ```
 CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
@@ -83,7 +83,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
 ### To Do List
 ✅1. Colab online running demo
 
-🔘2. Api interface for LLM segmentation methods
+🔘2. Api interface for LLM segmentation methods (The huggingface demo is coming soon!🤗)
 
 🔘3. Video style transfer
 
