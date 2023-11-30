@@ -66,6 +66,11 @@ $ conda activate soulstyler
 $ pip install -r requirements.txt
 $ pip install git+https://github.com/openai/CLIP.git
 ```
+If you clone this repository locally, you will need to download this weight file to the root directory before running it. Running colab directly will automatically download the weights.
+```
+https://drive.google.com/file/d/10wo4R7sGWw5ITHpjtv3dIbIbkGpvkMiJ/view?usp=sharing
+```
+
 
 ### 1. Single Image Style Transfer
 Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=F0LyDZnKoTuT)
@@ -101,7 +106,6 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-
 ```
 
 # License
