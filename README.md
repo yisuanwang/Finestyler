@@ -1,12 +1,10 @@
-# Soulstyler
-Soulstyler: Using Large Language Model to Guide Image Style Transfer for Target Object
+# FineStyler
 
-[![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Soulstyler?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Soulstyler)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=F0LyDZnKoTuT)
-[![arXiv](https://img.shields.io/badge/arXiv-2311.13562-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2311.13562)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19eCM4wMZJAMQ0Z99TKVIxVygIRs6TzV0?usp=sharing)
+
 ---
 
-**We provide a demo on colab that can be easily run!** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=F0LyDZnKoTuT)
+**We provide a demo on colab that can be easily run !**[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19eCM4wMZJAMQ0Z99TKVIxVygIRs6TzV0?usp=sharing)
 
 
 ``⚠: demo in colab needs to download the model from the internet 
@@ -14,49 +12,22 @@ and may run slowly due to GPU limitations (30s-60s an iter,
 usually need to train about 200 iters to get better results)``
 
 
-**For more technical details check out the latest version of the paper on arxiv:** [![arXiv](https://img.shields.io/badge/arXiv-2311.13562-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2311.13562)
-
 The top left is the original image, and the bottom left is the mask generated using the stylized objects via CRIS. The rest are stylized images generated with different stylized content. Our stylized translation results in various text conditions. The stylized images have the spatial structure of the content images with realistic textures corresponding to the text, while retaining the original style of the non-target regions.
 
-![soulstyler examples](./img/examples.jpg)
+![soulstyler examples](./img/examples3.jpg)
+
+
+![soulstyler comp](./img/comp.jpg)
 
 ❤A more detailed description of the source code is in the process of being organized and will be posted in a readme in this repository when the paper is accepted.
 
-## Framework
-
-Splitting Stylized Instruction into Stylized Content and Stylized Objects using the Large Language Model.
-![](./img/soulllm.jpg)
-
+## Pipeline
 
 The overall architecture of the system.
 ![](./img/soulstructure.jpg)
 
 
-## Experiments
-### Selection of Large Language Models
-
-![LLMs Score](./img/llmscore.jpg)
-
-Segmentation score of different LLMs. 
-We manually set up 100 Stylized Instruction and corresponding standard answers Stylized Content and Stylized Objects to check the correctness of different LLMs in performing Stylized Instruction comprehension and segmentation.
-LLM outputs are marked as correct when the stylized content and stylized objects are in perfect agreement with the standard answers, and the right-most columns are the scores we got from manually evaluating the segmentation effects of the LLMs.
-ChatGLM2-6B and Llama2-7b achieved high scores in the results of manual evaluation. We finally chose to use Llama2-7b as the LLM used for stylized instruction segmentation.
-
-
-
-### Comparison with existing text-guided style transfer models
-
-![Soulstyler Comparison](./img/comp.jpg)
-
-Comparison with existing state-of-the-art text-guided image style transfer models. Where CLIPstyler uses the yellow fields in the Stylized Instruction as style. The other baselines (ControlNet) use the entire Stylized Instruction as the input prompt. CLIPstyler and stable-diffusion-v1-5 image-to-image only output square images. For comparison, the output image of these two models is stretched to keep the same aspect ratio as the input Content Image.
-
-### Stylized Threshold Experiments: $t \lambda_m L_{\text{mask}}$
-
-![Soulstyler Threshold Experiments](./img/expt.jpg)
-
-We found that the threshold value t = 0.7 can just balance the stylization of the unsegmented part of the target object and the original image features of the non-target object region. A threshold t that is too small will result in non-targeted areas of the image being stylized, and too large will result in loss of stylization (loss of color or texture) in the targeted areas.
-
-## How to Run
+## Run
 
 ### Environment
 Python 3.10.13 & ptyorch 1.12.0+cu116 & ubuntu 20.04.1
@@ -73,7 +44,7 @@ https://drive.google.com/file/d/10wo4R7sGWw5ITHpjtv3dIbIbkGpvkMiJ/view?usp=shari
 
 
 ### 1. Single Image Style Transfer
-Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cn4W7IlooDk5X9JXBvsENRtExKJShb98#scrollTo=F0LyDZnKoTuT)
+Use this colab->[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19eCM4wMZJAMQ0Z99TKVIxVygIRs6TzV0?usp=sharing)
 
 
 ### 2. Multiple Image Style Transfer
@@ -88,25 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
 ### To Do List
 ✅1. Colab online running demo
 
-🔘2. Api interface for LLM segmentation methods (The huggingface demo is coming soon!🤗)
-
-🔘3. Video style transfer
-
-🔘4. Faster method of randomized cropping
-
-
-
-# Cite
-```
-@article{chen2023soulstyler,
-      title={Soulstyler: Using Large Language Model to Guide Image Style Transfer for Target Object}, 
-      author={Junhao Chen and Peng Rong and Jingbo Sun and Chao Li and Xiang Li and Hongwu Lv},
-      year={2023},
-      eprint={2311.13562},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
+🔘2. CUDA version FineStyler
 
 # License
 This code and model are available only for non-commercial research purposes as defined in the LICENSE (i.e., MIT LICENSE). 
@@ -114,8 +67,3 @@ This code and model are available only for non-commercial research purposes as d
 
 # Acknowledgment
 This implementation is mainly built based on [CRIS](https://github.com/DerrickWang005/CRIS.pytorch), [CLIPstyler](https://github.com/cyclomon/CLIPstyler) and [Llama 2](https://github.com/facebookresearch/llama).
-
-
-# ⭐️ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yisuanwang/Soulstyler&type=Date)](https://star-history.com/#yisuanwang/Soulstyler&Date)
