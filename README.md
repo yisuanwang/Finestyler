@@ -16,10 +16,11 @@ The top left is the original image, and the bottom left is the mask generated us
 
 ![soulstyler examples](./img/examples3.jpg)
 
-
 ![soulstyler comp](./img/comp.jpg)
 
-❤A more detailed description of the source code is in the process of being organized and will be posted in a readme in this repository when the paper is accepted.
+![soulstyler comp zecon](./img/comp_zecon.jpg)
+
+❤ A more detailed description of the source code is in the process of being organized and will be posted in a readme in this repository when the paper is accepted.
 
 ## Pipeline
 
