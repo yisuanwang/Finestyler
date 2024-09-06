@@ -66,4 +66,8 @@ This code and model are available only for non-commercial research purposes as d
 [Check the LICENSE](./LICENSE)
 
 # Acknowledgment
-This implementation is mainly built based on [CRIS](https://github.com/DerrickWang005/CRIS.pytorch), [CLIPstyler](https://github.com/cyclomon/CLIPstyler) and [Llama 2](https://github.com/facebookresearch/llama).
+This implementation is mainly built based on [CRIS](https://github.com/DerrickWang005/CRIS.pytorch), [CLIPstyler](https://github.com/cyclomon/CLIPstyler).
+
+# ⭐️ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yisuanwang/Finestyler&type=Date)](https://star-history.com/#yisuanwang/Finestyler&Date)
