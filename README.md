@@ -33,10 +33,13 @@ The overall architecture of the system.
 ### Environment
 Python 3.10.13 & ptyorch 1.12.0+cu116 & ubuntu 20.04.1
 ```
-$ conda create -n soulstyler python=3.10
-$ conda activate soulstyler
-$ pip install -r requirements.txt
-$ pip install git+https://github.com/openai/CLIP.git
+git clone https://github.com/yisuanwang/Finestyler.git
+cd Finestyler
+
+conda create -n finestyler python=3.10
+conda activate finestyler
+pip install -r requirements.txt
+pip install git+https://github.com/openai/CLIP.git
 ```
 If you clone this repository locally, you will need to download this weight file to the root directory before running it. Running colab directly will automatically download the weights.
 ```
