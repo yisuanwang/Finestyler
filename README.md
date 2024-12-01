@@ -65,6 +65,16 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --case=0 --style=0,7
 
 🔘2. CUDA version FineStyler
 
+# Citation
+```
+@article{chen2023soulstyler,
+  title={Soulstyler: Using Large Language Model to Guide Image Style Transfer for Target Object},
+  author={Chen, Junhao and Rong, Peng and Sun, Jingbo and Li, Chao and Li, Xiang and Lv, Hongwu},
+  journal={arXiv preprint arXiv:2311.13562},
+  year={2023}
+}
+```
+
 # License
 This code and model are available only for non-commercial research purposes as defined in the LICENSE (i.e., MIT LICENSE). 
 [Check the LICENSE](./LICENSE)
